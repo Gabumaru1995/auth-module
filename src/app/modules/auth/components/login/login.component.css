@@ -48,10 +48,13 @@
 }
 
 .button-group button {
+  background-color: #4ece82;
+  color: black;
   width: 100%;
 }
 
 .p-field input[pInputText] {
   width: 100%; /* Cambia este valor para ajustar el tamaño */
+  border-color: #4ece82
 }
 

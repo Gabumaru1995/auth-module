@@ -1,0 +1,27 @@
+<div class="profile-container">
+  <div class="header">
+    <h2>Listado de Perfiles</h2>
+    <button pButton label="Crear Perfil" icon="pi pi-plus" routerLink="/profile/create"></button>
+  </div>
+
+  <p-table [value]="profiles" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-profile>
+      <tr>
+        <td>{{ profile.name }}</td>
+        <td>{{ profile.email }}</td>
+        <td>
+          <button pButton icon="pi pi-eye" label="Ver" class="p-button-text" (click)="viewProfile(profile)"></button>
+          <button pButton icon="pi pi-pencil" label="Editar" class="p-button-text" [routerLink]="['/profile/edit', profile.id]"></button>
+          <button pButton icon="pi pi-trash" label="Eliminar" class="p-button-text" (click)="deleteProfile(profile)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
