@@ -38,7 +38,9 @@
       <!-- Botones -->
       <div class="button-group">
         <button pButton type="submit" label="Iniciar Sesión" [disabled]="loginForm.invalid"></button>
+        <button pButton type="button" label="Crear Cuenta" class="p-button-text" (click)="onRegister()"></button>
         <button pButton type="button" label="Recuperar Contraseña" class="p-button-text" (click)="onForgotPassword()"></button>
+
       </div>
     </form>
   </div>

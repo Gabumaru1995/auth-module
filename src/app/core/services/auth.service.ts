@@ -10,7 +10,7 @@ import { TokenStorageService } from './token-storage.service';
 })
 export class AuthService {
 
-  private apiUrl = 'https://api.example.com';  // Cambia esto por tu URL del backend
+  private apiUrl = 'http://localhost:3000/auth';  // Cambia esto por tu URL del backend
 
   constructor(
     private http: HttpClient,
@@ -18,8 +18,8 @@ export class AuthService {
     private tokenStorage: TokenStorageService
   ) {}
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { username, password }).pipe(
+  login(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap(response => {
         // Guardar el token en el storage
         this.tokenStorage.saveToken(response.token);
@@ -40,7 +40,7 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.tokenStorage.getToken();
   }
-  
+
   forgotPassword(email: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/forgot-password`, { email });
   }

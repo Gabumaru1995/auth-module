@@ -40,4 +40,8 @@ export class LoginComponent {
     this.router.navigate(['/forgot-password']); // Ajusta la ruta según tu configuración
   }
 
+  onRegister(): void {
+    // Redirigir a la ruta de registro (ajusta la ruta según tu configuración)
+    this.router.navigate(['/register']);
+  }
 }

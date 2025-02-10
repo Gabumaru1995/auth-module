@@ -25,5 +25,6 @@ import { ToastModule } from 'primeng/toast';
     CardModule,
     ToastModule,
   ],
+  exports: [RegisterComponent]
 })
 export class AuthModule {}
