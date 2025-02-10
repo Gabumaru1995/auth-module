@@ -14,9 +14,9 @@
           formControlName="username"
           [class.ng-invalid]="isFieldInvalid('username')"
         />
-        <small *ngIf="isFieldInvalid('username')" class="p-error">
-          El nombre de usuario es requerido.
-        </small>
+        @if (isFieldInvalid('username')) {
+          <small class="p-error">El nombre de usuario es requerido.</small>
+        }
       </div>
 
       <!-- Campo de correo electrónico -->
@@ -30,9 +30,9 @@
           formControlName="email"
           [class.ng-invalid]="isFieldInvalid('email')"
         />
-        <small *ngIf="isFieldInvalid('email')" class="p-error">
-          Ingresa un correo válido.
-        </small>
+        @if (isFieldInvalid('email')) {
+          <small class="p-error">Ingresa un correo válido.</small>
+        }
       </div>
 
       <!-- Campo de contraseña -->
@@ -46,9 +46,9 @@
           formControlName="password"
           [class.ng-invalid]="isFieldInvalid('password')"
         />
-        <small *ngIf="isFieldInvalid('password')" class="p-error">
-          La contraseña es requerida (mínimo 6 caracteres).
-        </small>
+        @if (isFieldInvalid('password')) {
+          <small class="p-error">La contraseña es requerida (mínimo 6 caracteres).</small>
+        }
       </div>
 
       <!-- Botón de registro -->

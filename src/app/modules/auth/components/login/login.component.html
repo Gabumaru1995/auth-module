@@ -14,9 +14,9 @@
           formControlName="email"
           [class.ng-invalid]="isFieldInvalid('email')"
         />
-        <small *ngIf="isFieldInvalid('email')" class="p-error">
-          Ingresa un correo válido.
-        </small>
+        @if (isFieldInvalid('email')) {
+          <small class="p-error">Ingresa un correo válido.</small>
+        }
       </div>
 
       <!-- Campo de contraseña -->
@@ -30,9 +30,9 @@
           formControlName="password"
           [class.ng-invalid]="isFieldInvalid('password')"
         />
-        <small *ngIf="isFieldInvalid('password')" class="p-error">
-          La contraseña es requerida.
-        </small>
+        @if (isFieldInvalid('password')) {
+          <small class="p-error">La contraseña es requerida.</small>
+        }
       </div>
 
       <!-- Botones -->
@@ -40,7 +40,6 @@
         <button pButton type="submit" label="Iniciar Sesión" [disabled]="loginForm.invalid"></button>
         <button pButton type="button" label="Crear Cuenta" class="p-button-text" (click)="onRegister()"></button>
         <button pButton type="button" label="Recuperar Contraseña" class="p-button-text" (click)="onForgotPassword()"></button>
-
       </div>
     </form>
   </div>
